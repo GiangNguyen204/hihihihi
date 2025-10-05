@@ -46,7 +46,7 @@ const organizationData = {
       avatar: '/images/people/pbt_tttn.JPG',
       member: {
         id: 7,
-        name: 'Đinh Trọng Quỳnh',
+        name: 'Nguyễn Thị Kim Hoa',
         role: 'Ủy viên',
         avatar: 'https://i.pravatar.cc/150?img=7',
       },

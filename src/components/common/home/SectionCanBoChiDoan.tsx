@@ -62,7 +62,6 @@ const SectionCanBoChiDoan = ({ data }: SectionCanBoChiDoanProps) => {
   );
 };
 
-// A small client-side paginated table wrapper
 function PaginatedTable({
   data,
   columns,
@@ -73,7 +72,6 @@ function PaginatedTable({
   const [page, setPage] = useState(1);
   const pageSize = 8;
 
-  // If no data or data is small, synthesize more fake rows for demo
   const fullData = useMemo(() => {
     if (data && data.length >= 24) return data;
     const base = data && data.length ? data : [];

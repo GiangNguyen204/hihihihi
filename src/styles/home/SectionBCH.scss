@@ -1,0 +1,67 @@
+.org-chart-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.org-chart-wrapper {
+  width: 800px;
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .org-chart-container {
+    height: calc(550px * 1.05);
+  }
+  .org-chart-wrapper {
+    transform: scale(0.88);
+  }
+}
+
+@media (max-width: 768px) {
+  .org-chart-container {
+    height: calc(550px * 0.8);
+  }
+  .org-chart-wrapper {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 640px) {
+  .org-chart-container {
+    height: calc(550px * 0.65);
+  }
+  .org-chart-wrapper {
+    transform: scale(0.55);
+  }
+}
+
+@media (max-width: 480px) {
+  .org-chart-container {
+    height: calc(550px * 0.5);
+  }
+  .org-chart-wrapper {
+    transform: scale(0.45);
+  }
+}
+
+@media (max-width: 400px) {
+  .org-chart-container {
+    height: calc(550px * 0.45);
+  }
+  .org-chart-wrapper {
+    transform: scale(0.38);
+  }
+}
+
+@media (max-width: 360px) {
+  .org-chart-container {
+    height: calc(550px * 0.4);
+  }
+  .org-chart-wrapper {
+    transform: scale(0.35);
+  }
+}

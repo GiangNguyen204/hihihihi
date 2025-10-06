@@ -73,6 +73,7 @@ const ImageWithFallback = ({
           ...style,
           display: 'block',
         }}
+        loading="lazy"
       />
     </div>
   );

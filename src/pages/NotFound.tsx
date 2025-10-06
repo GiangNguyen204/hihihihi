@@ -96,6 +96,7 @@ const NotFound: React.FC = () => {
                   // Fallback if image doesn't exist
                   e.currentTarget.style.display = 'none';
                 }}
+                loading="lazy"
               />
               {/* Decorative elements around image */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>

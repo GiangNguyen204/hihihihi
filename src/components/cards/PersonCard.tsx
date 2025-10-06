@@ -106,6 +106,7 @@ const PersonCard = ({ member }: { member: Member }) => {
               src={member.avatar || 'https://i.pravatar.cc/150?img=0'}
               alt={member.name}
               className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
             />
           </div>
         </div>

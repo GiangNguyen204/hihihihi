@@ -7,7 +7,7 @@ export interface Cohort {
   created_by?: number;
   modified_by?: number;
   created_at: string;
-  updated_at: string;
+  modified_at: string;
 }
 
 export interface CreateCohortRequest {

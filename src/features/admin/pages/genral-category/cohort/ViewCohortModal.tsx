@@ -267,7 +267,7 @@ const ViewCohortModal: React.FC<ViewCohortModalProps> = ({ visible, onCancel, co
                     </Space>
                   }
                 >
-                  <Text>{formatDate(cohort.updated_at)}</Text>
+                  <Text>{formatDate(cohort.modified_at)}</Text>
                 </Descriptions.Item>
 
                 {cohort.modified_by && (

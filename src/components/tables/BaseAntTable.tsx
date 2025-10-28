@@ -23,7 +23,7 @@ export function BaseAntTable<T extends object>({
   rowKey = 'id',
   responsive = true,
   compactOnMobile = true,
-  breakpoint = 'md',
+  // breakpoint = 'md',
   className,
   pagination,
   scroll,

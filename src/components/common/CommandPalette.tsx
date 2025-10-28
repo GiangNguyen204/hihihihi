@@ -18,6 +18,7 @@ import {
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import './CommandPalette.scss';
+import { RiTeamFill } from 'react-icons/ri';
 
 const { Text } = Typography;
 
@@ -123,7 +124,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onClose }) => {
         id: 'branches',
         title: 'Quản lý Chi đoàn',
         description: 'Quản lý các chi đoàn',
-        icon: <TeamOutlined />,
+        icon: <RiTeamFill />,
         category: 'pages',
         keywords: ['branches', 'chi đoàn', 'branch', 'đoàn'],
         action: () => {

@@ -1,0 +1,227 @@
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+
+  &__title {
+    flex: 0 0 auto;
+
+    h4 {
+      margin: 0;
+      color: #001529;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  &__search {
+    flex: 1 1 auto;
+    max-width: 500px;
+
+    .ant-input-search {
+      .ant-input-search-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-trigger {
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+      }
+
+      input {
+        cursor: pointer;
+      }
+    }
+
+    &-shortcut {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+
+      kbd {
+        padding: 2px 6px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #8c8c8c;
+        background-color: #fafafa;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+
+      span {
+        color: #8c8c8c;
+        font-size: 11px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__actions {
+    flex: 0 0 auto;
+  }
+
+  &__notification-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #f0f5ff !important;
+
+      .anticon {
+        color: #1890ff;
+      }
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &-role {
+      font-size: 12px;
+      color: #8c8c8c;
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 992px) {
+    &__search {
+      max-width: 300px;
+    }
+
+    &__user-info-text {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__title h4 {
+      font-size: 16px;
+    }
+
+    &__search {
+      max-width: 200px;
+
+      .ant-input-search-button span {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    gap: 8px;
+
+    &__search {
+      display: none;
+    }
+
+    &__actions {
+      .ant-space-item {
+        &:first-child {
+          display: none; // Hide divider on mobile
+        }
+      }
+    }
+  }
+}
+
+// Notification dropdown styles
+.admin-header-notification {
+  &__item {
+    max-width: 280px;
+    padding: 8px 0;
+
+    &-title {
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #262626;
+    }
+
+    &-content {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    &-time {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+  }
+
+  &__view-all {
+    text-align: center;
+    color: #1890ff;
+    font-weight: 500;
+    padding: 8px 0;
+
+    &:hover {
+      color: #40a9ff;
+    }
+  }
+}
+
+// User menu dropdown styles
+.admin-header-user-menu {
+  min-width: 200px;
+
+  .ant-dropdown-menu-item {
+    padding: 10px 16px;
+
+    &.ant-dropdown-menu-item-danger {
+      color: #ff4d4f;
+
+      &:hover {
+        background-color: #fff2f0;
+      }
+    }
+  }
+}
+
+// Custom badge styles for notification
+.admin-header__notification-badge {
+  .ant-badge-count {
+    font-size: 11px;
+    height: 18px;
+    min-width: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+  }
+}

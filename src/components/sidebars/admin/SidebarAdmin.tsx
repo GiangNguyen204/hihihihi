@@ -1,21 +1,20 @@
-import { Menu } from 'antd';
 import {
+  BarChartOutlined,
   DashboardOutlined,
-  UserOutlined,
+  DatabaseOutlined,
+  IdcardOutlined,
+  LineChartOutlined,
+  NotificationOutlined,
+  PieChartOutlined,
+  ProfileOutlined,
+  SafetyOutlined,
   SettingOutlined,
   TeamOutlined,
-  UserAddOutlined,
-  IdcardOutlined,
-  SafetyOutlined,
-  DatabaseOutlined,
-  NotificationOutlined,
   ToolOutlined,
-  ProfileOutlined,
-  BarChartOutlined,
-  LineChartOutlined,
-  PieChartOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
-import { useNavigate, useLocation } from '@tanstack/react-router';
+import { useLocation, useNavigate } from '@tanstack/react-router';
+import { Menu } from 'antd';
 import { useMemo } from 'react';
 import { RiTeamFill } from 'react-icons/ri';
 
@@ -105,83 +104,83 @@ export const SidebarAdmin = ({ collapsed }: SidebarAdminProps) => {
           {
             key: 'dashboard',
             icon: <BarChartOutlined />,
-            label: 'Overview',
+            label: 'Tổng quan',
           },
           {
             key: 'analytics',
             icon: <LineChartOutlined />,
-            label: 'Analytics',
+            label: 'Thống kê',
           },
           {
             key: 'reports',
             icon: <ProfileOutlined />,
-            label: 'Reports',
+            label: 'Báo cáo',
           },
           {
             key: 'charts',
             icon: <PieChartOutlined />,
-            label: 'Charts',
+            label: 'Biểu đồ',
           },
         ],
       },
       {
         key: 'general-category-menu',
         icon: <DatabaseOutlined />,
-        label: 'General Category',
+        label: 'Danh mục chung',
         children: [
           {
             key: 'cohorts',
             icon: <TeamOutlined />,
-            label: 'Cohorts',
+            label: 'Khóa',
           },
           {
             key: 'branches',
             icon: <RiTeamFill />,
-            label: 'Branches',
+            label: 'Chi đoàn',
           },
         ],
       },
       {
         key: 'users-menu',
         icon: <UserOutlined />,
-        label: 'User Management',
+        label: 'Quản lý người dùng',
         children: [
           {
             key: 'users',
             icon: <TeamOutlined />,
-            label: 'All Users',
+            label: 'Tài khoản người dùng',
           },
           {
             key: 'user-roles',
             icon: <IdcardOutlined />,
-            label: 'Roles & Permissions',
+            label: 'Quyền & vai trò',
           },
         ],
       },
       {
         key: 'settings-menu',
         icon: <SettingOutlined />,
-        label: 'Settings',
+        label: 'Cài đặt',
         children: [
           {
             key: 'settings',
             icon: <ToolOutlined />,
-            label: 'General',
+            label: 'Chung',
           },
           {
             key: 'system-settings',
             icon: <DatabaseOutlined />,
-            label: 'System',
+            label: 'Hệ thống',
           },
           {
             key: 'security-settings',
             icon: <SafetyOutlined />,
-            label: 'Security',
+            label: 'Bảo mật',
           },
           {
             key: 'notification-settings',
             icon: <NotificationOutlined />,
-            label: 'Notifications',
+            label: 'Thông báo',
           },
         ],
       },
@@ -200,7 +199,7 @@ export const SidebarAdmin = ({ collapsed }: SidebarAdminProps) => {
           color: '#fff',
         }}
       >
-        {collapsed ? 'A' : 'Admin'}
+        {collapsed ? 'QTV' : 'Quản trị viên'}
       </div>
       <Menu
         theme="dark"

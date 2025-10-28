@@ -1,0 +1,146 @@
+.view-cohort-modal {
+  .ant-modal-content {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+  }
+
+  .ant-modal-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .ant-modal-close {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
+    }
+  }
+
+  .info-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+      border-color: #1890ff !important;
+    }
+
+    .ant-card-head {
+      transition: all 0.3s ease;
+    }
+
+    &:hover .ant-card-head {
+      background-color: #f0f5ff;
+    }
+
+    .ant-descriptions-item-label {
+      padding: 12px 0;
+      transition: color 0.3s ease;
+    }
+
+    .ant-descriptions-item-content {
+      padding: 12px 0;
+    }
+  }
+
+  .cohort-header-card {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: shimmer 8s infinite linear;
+    }
+  }
+
+  .timeline-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+
+  // Tag animations
+  .ant-tag {
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .ant-modal {
+      max-width: 95vw !important;
+      margin: 16px auto;
+    }
+
+    .ant-modal-body {
+      padding: 20px !important;
+    }
+
+    .cohort-header-card .ant-card-body {
+      padding: 20px !important;
+    }
+
+    .info-card .ant-card-body {
+      padding: 16px !important;
+    }
+
+    .timeline-card .ant-card-body {
+      padding: 20px !important;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Smooth fade-in animation for modal content
+.cohort-details {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Pulse animation for status tag
+.cohort-header-card .ant-tag {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}

@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { createHtmlPlugin } from 'vite-plugin-html';
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -11,6 +10,8 @@ export default defineConfig({
     tailwindcss(),
     ViteImageOptimizer({
       webp: { quality: 80 },
+      jpg: { quality: 80 },
+      png: { quality: 80 },
     }),
     createHtmlPlugin({
       minify: true,

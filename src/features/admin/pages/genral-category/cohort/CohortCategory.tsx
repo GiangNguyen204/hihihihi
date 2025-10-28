@@ -29,8 +29,6 @@ import DeleteCohortModal from './DeleteCohortModal';
 import UpdateCohortModal from './UpdateCohortModal';
 import ViewCohortModal from './ViewCohortModal';
 
-
-
 const { Title } = Typography;
 const { Search } = Input;
 
@@ -442,6 +440,30 @@ const CohortCategory: React.FC = () => {
       <Card>
         <div style={{ marginBottom: 16 }}>
           <Row justify="space-between" align="middle" gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8} lg={6}>
+              <Search
+                placeholder="Tìm kiếm theo mã hoặc tên khóa..."
+                allowClear
+                enterButton={
+                  <Button
+                    type="primary"
+                    icon={<SearchOutlined />}
+                    style={{
+                      background:
+                        'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%)',
+                      border: 'none',
+                      borderRadius: '0 8px 8px 0',
+                    }}
+                  />
+                }
+                onSearch={handleSearch}
+                loading={loading}
+                style={{
+                  borderRadius: '10px',
+                }}
+                className="modern-search"
+              />
+            </Col>
             <Col>
               <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>
                 Quản lý khóa
@@ -540,35 +562,6 @@ const CohortCategory: React.FC = () => {
                   Tải lại
                 </Button>
               </Space>
-            </Col>
-          </Row>
-        </div>
-
-        <div style={{ marginBottom: 16 }}>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12} md={8} lg={6}>
-              <Search
-                placeholder="Tìm kiếm theo mã hoặc tên khóa..."
-                allowClear
-                enterButton={
-                  <Button
-                    type="primary"
-                    icon={<SearchOutlined />}
-                    style={{
-                      background:
-                        'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%)',
-                      border: 'none',
-                      borderRadius: '0 8px 8px 0',
-                    }}
-                  />
-                }
-                onSearch={handleSearch}
-                loading={loading}
-                style={{
-                  borderRadius: '10px',
-                }}
-                className="modern-search"
-              />
             </Col>
           </Row>
         </div>

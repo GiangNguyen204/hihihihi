@@ -3,6 +3,7 @@ import SectionBCH from '@components/common/home/SectionBCH';
 import SectionIntro from '@components/common/home/SectionIntro';
 import SectionLienHe from '@components/common/home/SectionLienHe';
 import SectionTinTuc from '@components/common/home/SectionTinTuc';
+import BirthdayCard from '@components/common/home/BirthdayCard';
 import './Home.css';
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <div className="w-full">
+      <BirthdayCard />
       <HeroSlider images={sliderImages} />
       <SectionIntro />
       <SectionBCH />

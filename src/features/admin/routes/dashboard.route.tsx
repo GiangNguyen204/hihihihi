@@ -1,7 +1,8 @@
 import { adminRoute } from '@routes/admin.routes';
 import { createRoute } from '@tanstack/react-router';
 import OverviewDashboard from '../pages/dashboard/Overview/Overview';
-
+import StatisticalDashboard from '../pages/dashboard/Statistical/Statistical';
+import ReportsDashboard from '../pages/dashboard/Report/Report';
 const dashboardRouteAdmin = createRoute({
   getParentRoute: () => adminRoute,
   path: '/dashboard',
@@ -13,8 +14,26 @@ const overviewRouteAdmin = createRoute({
   path: '/overview',
   component: OverviewDashboard,
 });
+const statisticalRouteAdmin = createRoute({
+  getParentRoute: () => dashboardRouteAdmin,
+  path: '/statistical',
+  component: StatisticalDashboard,
+});
+const reportsRouteAdmin = createRoute({
+  getParentRoute: () => dashboardRouteAdmin,
+  path: '/reports',
+  component: ReportsDashboard,
+});
+const dashboardTree = dashboardRouteAdmin.addChildren([
+  overviewRouteAdmin,
+  statisticalRouteAdmin,
+  reportsRouteAdmin,
+]);
 
-const  dashboardTree = dashboardRouteAdmin.addChildren([overviewRouteAdmin]);
-
-
-export { dashboardRouteAdmin, dashboardTree, overviewRouteAdmin };
+export {
+  dashboardRouteAdmin,
+  dashboardTree,
+  overviewRouteAdmin,
+  statisticalRouteAdmin,
+  reportsRouteAdmin,
+};

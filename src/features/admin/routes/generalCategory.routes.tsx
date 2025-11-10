@@ -1,7 +1,7 @@
 import { adminRoute } from '@routes/admin.routes';
 import { createRoute } from '@tanstack/react-router';
 import CohortCategory from '../pages/genral-category/cohort/CohortCategory';
-import BranchCategory from '../pages/genral-category/branch/Branch';
+import BranchCategory from '../pages/genral-category/branch/BranchCategory';
 
 // Main route
 const generalCategoryRouteAdmin = createRoute({
@@ -17,12 +17,19 @@ const cohortCategoryRouteAdmin = createRoute({
 });
 // child routes Branch
 const branchCategoryRouteAdmin = createRoute({
-  getParentRoute:() => generalCategoryRouteAdmin,
+  getParentRoute: () => generalCategoryRouteAdmin,
   path: '/branches',
   component: BranchCategory,
-})
+});
 
-const generalCategoryTree = generalCategoryRouteAdmin.addChildren([cohortCategoryRouteAdmin,branchCategoryRouteAdmin]);
+const generalCategoryTree = generalCategoryRouteAdmin.addChildren([
+  cohortCategoryRouteAdmin,
+  branchCategoryRouteAdmin,
+]);
 
-
-export { cohortCategoryRouteAdmin,branchCategoryRouteAdmin, generalCategoryRouteAdmin, generalCategoryTree };
+export {
+  cohortCategoryRouteAdmin,
+  branchCategoryRouteAdmin,
+  generalCategoryRouteAdmin,
+  generalCategoryTree,
+};

@@ -69,7 +69,7 @@ export const SidebarAdmin = ({ collapsed }: SidebarAdminProps) => {
     const routeMap: Record<string, string> = {
       // Dashboard routes
       dashboard: '/admin/dashboard/overview',
-      analytics: '/admin/dashboard/analytics',
+      analytics: '/admin/dashboard/statistical',
       reports: '/admin/dashboard/reports',
       charts: '/admin/dashboard/charts',
 

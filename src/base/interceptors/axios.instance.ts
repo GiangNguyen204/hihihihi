@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const accessToken = '';
+  const accessToken = localStorage.getItem('accessToken');
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
   }
@@ -37,21 +37,44 @@ axiosInstance.interceptors.response.use(
       original._retry = true;
       isRefreshing = true;
       try {
+        const refreshToken = localStorage.getItem('refreshToken');
+        if (!refreshToken) {
+          // No refresh token, clear auth and redirect to login
+          localStorage.clear();
+          window.location.href = '/login';
+          return Promise.reject(new Error('No refresh token available'));
+        }
+
         const response = await axios.post(
-          `${API_URL}/auth/refresh`,
-          {},
+          `${API_URL}/access/refresh-token`,
+          { refreshToken },
           {
-            withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json',
+            },
           },
         );
-        if (response.status === 200) {
-          const { accessToken } = response.data;
+
+        if (response.status === 200 && response.data?.data) {
+          const { accessToken, refreshToken: newRefreshToken } = response.data.data;
+
+          // Save new tokens
+          localStorage.setItem('accessToken', accessToken);
+          if (newRefreshToken) {
+            localStorage.setItem('refreshToken', newRefreshToken);
+          }
+
+          // Retry pending requests
           pendingRequests.forEach((cb) => cb(accessToken));
           pendingRequests = [];
+
           original.headers.Authorization = `Bearer ${accessToken}`;
           return axiosInstance(original);
         }
       } catch (error) {
+        // Refresh failed, clear auth and redirect to login
+        localStorage.clear();
+        window.location.href = '/login';
         return Promise.reject(error);
       } finally {
         isRefreshing = false;

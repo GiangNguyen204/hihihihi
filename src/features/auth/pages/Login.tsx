@@ -10,6 +10,7 @@ import { useNavigate } from '@tanstack/react-router';
 import { Button, Checkbox, Col, Form, Input, message, Row, Tabs } from 'antd';
 import React, { useState } from 'react';
 import { RiAdminFill } from 'react-icons/ri';
+import { authService } from '../../../services/api';
 import './Login.scss';
 
 type UserType = 'member' | 'officer' | 'admin';
@@ -17,12 +18,13 @@ type UserType = 'member' | 'officer' | 'admin';
 interface LoginFormData {
   username?: string;
   studentId?: string;
+  email?: string;
   password?: string;
   remember?: boolean;
 }
 
 export const Login: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<UserType>('member');
+  const [activeTab, setActiveTab] = useState<UserType>('officer');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -30,26 +32,31 @@ export const Login: React.FC = () => {
     setLoading(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      message.success(`Đăng nhập thành công với tư cách ${getUserTypeText(userType)}!`);
-      console.log('Login data:', { ...values, userType });
-    } catch {
-      message.error('Đăng nhập thất bại. Vui lòng thử lại!');
+      // For member type, we'll use student ID as email for now
+      // You can modify this logic based on your backend requirements
+      const email = values.email || values.username || `${values.studentId}@student.com`;
+      const password = values.password || values.studentId || '';
+
+      const response = await authService.login({
+        email,
+        password,
+      });
+
+      message.success(`Đăng nhập thành công! Chào mừng ${response.user.fullName}`);
+
+      // Navigate to appropriate page based on user role or type
+      if (userType === 'admin') {
+        navigate({ to: '/admin' });
+      } else {
+        navigate({ to: '/' });
+      }
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : 'Đăng nhập thất bại. Vui lòng thử lại!';
+      message.error(errorMessage);
+      console.error('Login error:', error);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const getUserTypeText = (userType: UserType): string => {
-    switch (userType) {
-      case 'member':
-        return 'Đoàn viên';
-      case 'officer':
-        return 'Cán bộ Đoàn';
-      case 'admin':
-        return 'Admin';
-      default:
-        return '';
     }
   };
 
@@ -102,14 +109,17 @@ export const Login: React.FC = () => {
       className="login-form"
     >
       <Form.Item
-        label="Tài khoản"
-        name="username"
+        label="Email"
+        name="email"
         hasFeedback
-        rules={[{ required: true, message: 'Vui lòng nhập tài khoản!' }]}
+        rules={[
+          { required: true, message: 'Vui lòng nhập email!' },
+          { type: 'email', message: 'Email không hợp lệ!' },
+        ]}
       >
         <Input
           prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="Mã sinh viên hoặc mã giảng viên"
+          placeholder="Nhập email của bạn"
           className="modern-input"
           autoComplete="username"
         />
@@ -166,14 +176,17 @@ export const Login: React.FC = () => {
       className="login-form"
     >
       <Form.Item
-        label="Tài khoản"
-        name="username"
+        label="Email Admin"
+        name="email"
         hasFeedback
-        rules={[{ required: true, message: 'Vui lòng nhập tài khoản admin!' }]}
+        rules={[
+          { required: true, message: 'Vui lòng nhập email admin!' },
+          { type: 'email', message: 'Email không hợp lệ!' },
+        ]}
       >
         <Input
           prefix={<RiAdminFill className="site-form-item-icon" />}
-          placeholder="Nhập tài khoản admin"
+          placeholder="Nhập email admin"
           className="modern-input"
           autoComplete="username"
         />

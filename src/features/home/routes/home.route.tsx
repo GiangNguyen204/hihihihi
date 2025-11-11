@@ -2,6 +2,8 @@ import { mainRoute } from '@routes/main.routes';
 import { createRoute } from '@tanstack/react-router';
 import Home from '@features/home/pages/Home';
 import checkActivitesRoute from './checkActivities.route';
+import executiveBoardRoute from './executiveBoard.route';
+import contactRoute from './conTact.route';
 
 const homeRoute = createRoute({
   getParentRoute: () => mainRoute,
@@ -9,6 +11,6 @@ const homeRoute = createRoute({
   component: Home,
 });
 
-const homeTree = homeRoute.addChildren([checkActivitesRoute]);
+const homeTree = homeRoute.addChildren([checkActivitesRoute, executiveBoardRoute, contactRoute]);
 
 export { homeTree, homeRoute };

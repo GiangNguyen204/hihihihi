@@ -15,11 +15,21 @@
     <img width="200" alt="DaiNam University" src="https://github.com/user-attachments/assets/11138726-5355-4c53-9fdb-bec177681ae0" />
   </p>
 
-[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
-[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
-[![Node.js](https://img.shields.io/badge/Node.js-green?style=for-the-badge)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React.js-blue?style=for-the-badge)](https://react.dev/)
-[![Tailwind](https://img.shields.io/badge/TailwindCSS-lightblue?style=for-the-badge)](https://tailwindcss.com/)
+  <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+    <img src="https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge" alt="Faculty of Information Technology"/>
+  </a>
+  <a href="https://dainam.edu.vn">
+    <img src="https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge" alt="DaiNam University"/>
+  </a>
+  <a href="https://nodejs.org/">
+    <img src="https://img.shields.io/badge/Node.js-green?style=for-the-badge" alt="Node.js"/>
+  </a>
+  <a href="https://react.dev/">
+    <img src="https://img.shields.io/badge/React.js-blue?style=for-the-badge" alt="React.js"/>
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/TailwindCSS-lightblue?style=for-the-badge" alt="TailwindCSS"/>
+  </a>
 </div>
 
 ---
@@ -32,7 +42,7 @@ Dự án giúp tăng hiệu quả quản lý, tra cứu và truyền thông nộ
 🎯 **Mục tiêu:**
 - 🌐 Cung cấp cổng thông tin tập trung về công tác Đoàn: giới thiệu, tin tức, hoạt động, liên hệ.  
 - 🧾 Hỗ trợ đoàn viên tra cứu lịch sử tham gia hoạt động dựa trên mã sinh viên.  
-- 👥 Hỗ trợ Ban Chấp hành quản lý danh sách cán bộ, chi đoàn, nhiệm kỳ và thông tin liên hệ.  
+- 👥 Hỗ trợ Ban Chấp Hành quản lý danh sách cán bộ, chi đoàn, nhiệm kỳ và thông tin liên hệ.  
 - 🔗 Tạo nền tảng kỹ thuật có thể mở rộng, tích hợp API với hệ thống của nhà trường.
 
 👤 **Các nhóm người dùng chính:**
@@ -66,6 +76,17 @@ Dự án giúp tăng hiệu quả quản lý, tra cứu và truyền thông nộ
 
 > ✨ *Các hình ảnh minh họa giao diện thực tế của hệ thống.*
 
+### 📊 Dashboard – Tổng quan hệ thống (Admin)
+<img src="<LINK_DASHBOARD_TONG_QUAN>" width="800"/>
+
+### 🧮 Quản lý danh mục Khóa
+<img src="<LINK_QUAN_LY_KHOA>" width="800"/>
+
+### 🧩 Quản lý Chi đoàn
+<img src="<LINK_QUAN_LY_CHI_DOAN>" width="800"/>
+
+---
+
 ### 🔐 Giao diện đăng nhập
 <img src="https://github.com/user-attachments/assets/1b5b1c7b-1234-4f4a-9bcb-aaa123456789" width="800"/>
 
@@ -96,60 +117,65 @@ Dự án giúp tăng hiệu quả quản lý, tra cứu và truyền thông nộ
 ```bash
 git clone https://github.com/<username>/<ten-repo-quan-ly-doan>.git
 cd <ten-repo-quan-ly-doan>
-🔹 Bước 2: Cài đặt thư viện
-bash
-Sao chép mã
+```
+
+#### 🔹 Bước 2: Cài đặt thư viện
+```bash
 npm install
-Hoặc nếu frontend/backend tách riêng, chạy npm install trong từng thư mục.
+```
+> Nếu frontend và backend tách riêng, chạy `npm install` trong từng thư mục tương ứng (`/frontend`, `/backend`, ...).
 
-🔹 Bước 3: Cấu hình backend
-Sửa file .env hoặc config.js:
+#### 🔹 Bước 3: Cấu hình backend
+Sửa file `.env` hoặc `config.js` (ví dụ):
 
+```env
 PORT=5000
-
-DATABASE_URL (nếu có)
+DATABASE_URL=<chuỗi_kết_nối_cơ_sở_dữ_liệu_nếu_có>
+```
 
 Chạy backend:
-
-bash
-Sao chép mã
+```bash
 npm start
-Mở Swagger UI tại: http://localhost:5000/api-docs
+```
 
-🔹 Bước 4: Cấu hình frontend
-Chỉnh biến môi trường API:
+Mở Swagger UI tại:  
+`http://localhost:5000/api-docs`
 
-ini
-Sao chép mã
+#### 🔹 Bước 4: Cấu hình frontend
+Chỉnh biến môi trường API (ví dụ file `.env` của React):
+
+```env
 REACT_APP_API_URL=http://localhost:5000
+```
+
 Chạy React:
-
-bash
-Sao chép mã
+```bash
 npm run dev
-Truy cập: http://localhost:3000
+```
 
-🔹 Bước 5: Kiểm tra hoạt động
-Đăng nhập vai trò: Đoàn viên / Cán bộ Đoàn / Admin.
+Truy cập ứng dụng tại:  
+`http://localhost:3000`
 
-Thử tra cứu hoạt động, xem tin tức, gửi liên hệ.
+#### 🔹 Bước 5: Kiểm tra hoạt động
+- Đăng nhập với vai trò: **Đoàn viên / Cán bộ Đoàn / Admin**.  
+- Thử: tra cứu hoạt động, xem tin tức, gửi liên hệ.  
+- Đảm bảo frontend gọi API backend thành công (không lỗi CORS, 404, 500,...).
 
-Đảm bảo kết nối API thành công giữa frontend và backend.
+---
 
-📞 5. LIÊN HỆ
-👩‍💻 Sinh viên thực hiện:
+## 📞 5. LIÊN HỆ
+
+👩‍💻 **Sinh viên thực hiện:**  
 Nguyễn Thúy Hằng
 
-🎓 Giảng viên hướng dẫn:
+🎓 **Giảng viên hướng dẫn:**  
+- ThS. Lê Trung Hiếu  
+- KS. Nguyễn Thái Khánh  
 
-ThS. Lê Trung Hiếu
+🏫 **Đơn vị:**  
+Khoa Công Nghệ Thông Tin – Trường Đại học Đại Nam  
+🌐 Website: https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin  
 
-KS. Nguyễn Thái Khánh
-
-🏫 Đơn vị:
-Khoa Công Nghệ Thông Tin – Trường Đại học Đại Nam
-🌐 Website: https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin
-
-📧 Email: hangnguyen@example.com
-📞 SĐT: 0353 397 306
-📘 Facebook: Giang Nguyen
+📧 **Email:** hangnguyen@example.com  
+📞 **SĐT:** 0353 397 306  
+📘 **Facebook:** Giang Nguyen

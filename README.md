@@ -77,30 +77,38 @@ Dự án giúp tăng hiệu quả quản lý, tra cứu và truyền thông nộ
 > ✨ *Các hình ảnh minh họa giao diện thực tế của hệ thống.*
 
 ### 📊 Dashboard – Tổng quan hệ thống (Admin)
-<img src="<LINK_DASHBOARD_TONG_QUAN>" width="800"/>
+<img width="2930" height="1414" alt="image" src="https://github.com/user-attachments/assets/91605f4b-7437-4aeb-a2c5-b6586a9284a8" />
+
 
 ### 🧮 Quản lý danh mục Khóa
-<img src="<LINK_QUAN_LY_KHOA>" width="800"/>
+<img width="2904" height="1304" alt="image" src="https://github.com/user-attachments/assets/7396bd3e-110a-4e80-91c6-eca2db168642" />
+
 
 ### 🧩 Quản lý Chi đoàn
-<img src="<LINK_QUAN_LY_CHI_DOAN>" width="800"/>
+<img width="2940" height="1414" alt="image" src="https://github.com/user-attachments/assets/108d8d6f-fdea-434b-82f9-755965f45e65" />
+
 
 ---
 
 ### 🔐 Giao diện đăng nhập
-<img src="https://github.com/user-attachments/assets/1b5b1c7b-1234-4f4a-9bcb-aaa123456789" width="800"/>
+<img width="2814" height="1454" alt="image" src="https://github.com/user-attachments/assets/fa3c3d46-caed-4601-84b1-7b7978d29cd4" />
+
 
 ### 🏠 Trang chủ Liên chi Đoàn
-<img src="https://github.com/user-attachments/assets/eb8feace-4ca3-41ac-8159-59a557b7ad71" width="800"/>
+<img width="2914" height="1452" alt="image" src="https://github.com/user-attachments/assets/18e6eefa-d89b-4847-b420-0be8d5f7f2aa" />
+
 
 ### 🔍 Tra cứu hoạt động Đoàn
-<img src="https://github.com/user-attachments/assets/e55fddd3-2b25-4a44-88d7-ea7de650dac5" width="800"/>
+<img width="2940" height="1412" alt="image" src="https://github.com/user-attachments/assets/dbe9cf78-4f89-499c-ab74-bb11a5791561" />
+
 
 ### 👩‍💼 Ban Chấp Hành chi đoàn
-<img src="https://github.com/user-attachments/assets/68537ee7-8795-419f-9702-6782e74a9269" width="800"/>
+<img width="1496" height="1028" alt="image" src="https://github.com/user-attachments/assets/83c22ed5-d7ba-4584-b1a6-eab2e5144f95" />
+
 
 ### 💬 Liên hệ / Góp ý
-<img src="https://github.com/user-attachments/assets/9d0e9f11-507b-4042-bd5e-a976452b2a77" width="800"/>
+<img width="1426" height="1036" alt="image" src="https://github.com/user-attachments/assets/c2d6639d-647b-45e0-ac8e-6bc0477f4cb1" />
+
 
 ---
 
@@ -176,6 +184,4 @@ Nguyễn Thúy Hằng
 Khoa Công Nghệ Thông Tin – Trường Đại học Đại Nam  
 🌐 Website: https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin  
 
-📧 **Email:** hangnguyen@example.com  
-📞 **SĐT:** 0353 397 306  
-📘 **Facebook:** Giang Nguyen
+📧 **Email:** hangnguyen.qc@gmail.com
